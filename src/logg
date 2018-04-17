@@ -1,0 +1,116 @@
+/*
+    CREATE TABLE IF NOT EXISTS address (\n" +
+            "       address_id INTEGER PRIMARY KEY,\n" +
+            "       street_number TEXT,\n" +
+            "       street_name TEXT,\n" +
+            "       postal_code TEXT,\n" +
+            "       postal_town TEXT,\n" +
+            "       UNIQUE(street_number, street_name, postal_code, postal_town)\n" +
+            ");\n" +
+            "\n" +
+            "CREATE TABLE IF NOT EXISTS customer (\n" +
+            "       customer_id INTEGER PRIMARY KEY,\n" +
+            "       customer_name TEXT,\n" +
+            "       address INTEGER,\n" +
+            "       phone_number TEXT,\n" +
+            "       billing_account TEXT,\n" +
+            "       UNIQUE(billing_account),\n" +
+            "       UNIQUE(phone_number),\n" +
+            "       FOREIGN KEY(address) REFERENCES address(address_id)\n" +
+            ");\n" +
+            "\n" +
+            "CREATE TABLE IF NOT EXISTS category (\n" +
+            "       category_id INTEGER PRIMARY KEY,\n" +
+            "       category_name TEXT,\n" +
+            "       UNIQUE(category_name)\n" +
+            ");\n" +
+            "\n" +
+            "CREATE TABLE IF NOT EXISTS product (\n" +
+            "       product_id INTEGER PRIMARY KEY,\n" +
+            "       product_name TEXT,\n" +
+            "       description TEXT,\n" +
+            "       price REAL,\n" +
+            "       category INTEGER,\n" +
+            "       FOREIGN KEY(category) REFERENCES category(category_id)\n" +
+            ");\n" +
+            "\n" +
+            "CREATE TABLE IF NOT EXISTS invoice (\n" +
+            "       invoice_id INTEGER PRIMARY KEY,\n" +
+            "       customer INTEGER,\n" +
+            "       dato TEXT,\n" +
+            "       FOREIGN KEY(customer) REFERENCES customer(customer_id)\n" +
+            ");\n" +
+            "\n" +
+            "CREATE TABLE IF NOT EXISTS Invoice_items (\n" +
+            "       invoice INTEGER,\n" +
+            "       product INTEGER,\n" +
+            "       FOREIGN KEY (invoice) REFERENCES invoice(invoice_id),\n" +
+            "       FOREIGN KEY (product) REFERENCES product(product_id)\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO address (\n" +
+            "       address_id,\n" +
+            "       street_number,\n" +
+            "       street_name,\n" +
+            "       postal_code,\n" +
+            "       postal_town\n" +
+            ") VALUES (\n" +
+            "     1,\n" +
+            "     \"6\",\n" +
+            "     \"Fosswinckelsgate\",\n" +
+            "     \"5007\",\n" +
+            "     \"Bergen\"\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO customer  (\n" +
+            "       customer_id,\n" +
+            "       customer_name,\n" +
+            "       address,\n" +
+            "       phone_number,\n" +
+            "       billing_account\n" +
+            ") VALUES (\n" +
+            "  1,\n" +
+            "  \"Institutt for InfoMedia\",\n" +
+            "  1,\n" +
+            "  \"+47 55 58 91 00\",\n" +
+            "  \"706741409023\"\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO category (\n" +
+            "       category_id,\n" +
+            "       category_name\n" +
+            ") VALUES (\n" +
+            "       1,\n" +
+            "       \"books\"\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO product (\n" +
+            "       product_id,\n" +
+            "       product_name,\n" +
+            "       description,\n" +
+            "       price,\n" +
+            "       category\n" +
+            ") VALUES (\n" +
+            "  1,\n" +
+            "  \"Structure and interpretation of computer programs\",\n" +
+            "  \"Book about programming\",\n" +
+            "  499.00,\n" +
+            "  1\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO invoice (\n" +
+            "       invoice_id,\n" +
+            "       customer,\n" +
+            "       dato\n" +
+            ") VALUES (\n" +
+            "  1, 1, \"04.04.2018\"\n" +
+            ");\n" +
+            "\n" +
+            "INSERT OR IGNORE INTO Invoice_items (\n" +
+            "   invoice,\n" +
+            "   product\n" +
+            ") VALUES (\n" +
+            "  1, 1\n" +
+            ");\n";
+
+    */

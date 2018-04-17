@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="888.0" prefWidth="959.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TabPane layoutX="200.0" layoutY="-6.0" prefHeight="772.0" prefWidth="959.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Fakturautskrift">
+               <content>
+                  <Pane prefHeight="835.0" prefWidth="959.0">
+                     <children>
+                        <Pane prefHeight="198.0" prefWidth="959.0">
+                           <children>
+                              <Pane layoutY="-27.0" prefHeight="174.0" prefWidth="347.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="34.0" prefHeight="27.0" prefWidth="313.0" text="Gatenavn" />
+                                    <Label layoutX="14.0" layoutY="61.0" prefHeight="27.0" prefWidth="254.0" text="Gatenummer" />
+                                    <Label layoutX="13.0" layoutY="88.0" prefHeight="27.0" prefWidth="221.0" text="Poststed" />
+                                    <Label layoutX="13.0" layoutY="115.0" prefHeight="27.0" prefWidth="145.0" text="Postnummer" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="467.0" prefHeight="141.0" prefWidth="398.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="41.0" prefHeight="27.0" prefWidth="372.0" text="Adresse" />
+                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="364.0" text="Kunde" />
+                                    <Label layoutX="14.0" layoutY="68.0" prefHeight="27.0" prefWidth="356.0" text="Telefon" />
+                                    <Label layoutX="14.0" layoutY="95.0" prefHeight="27.0" prefWidth="342.0" text="Kontunummer" />
+                                 </children>
+                              </Pane>
+                           </children></Pane>
+                        <TreeTableView layoutX="14.0" layoutY="198.0" prefHeight="258.0" prefWidth="813.0">
+                          <columns>
+                            <TreeTableColumn prefWidth="215.0" text="Produkt" />
+                            <TreeTableColumn prefWidth="247.0" text="Beskrivelse" />
+                              <TreeTableColumn minWidth="0.0" prefWidth="138.0" text="Pris" />
+                              <TreeTableColumn prefWidth="212.0" text="Totalpris" />
+                          </columns>
+                        </TreeTableView>
+                        <Button layoutX="21.0" layoutY="478.0" mnemonicParsing="false" onAction="#insertTables" text="Legg til faktura" />
+                        <SplitMenuButton layoutX="262.0" layoutY="498.0" mnemonicParsing="false" text="SplitMenuButton">
+                          <items>
+                            <MenuItem fx:id="invdropdown" mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                        </SplitMenuButton>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+          <Tab text="Legge til faktura">
+               <content>
+                  <Pane prefHeight="887.0" prefWidth="959.0">
+                     <children>
+                        <Pane layoutX="6.0" prefHeight="144.0" prefWidth="948.0">
+                           <children>
+                              <TextField layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                              <Label layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="address_id" />
+                              <Label layoutX="108.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Street number" />
+                              <Label layoutX="225.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Street name" />
+                              <Label layoutX="333.0" layoutY="15.0" prefHeight="27.0" prefWidth="217.0" text="postal code" />
+                              <Button layoutX="558.0" layoutY="42.0" mnemonicParsing="false" text="add" />
+                              <Label layoutX="441.0" layoutY="15.0" prefHeight="27.0" prefWidth="217.0" text="Postal town" />
+                              <TextField layoutX="118.0" layoutY="42.0" prefHeight="39.0" prefWidth="98.0" />
+                              <TextField layoutX="227.0" layoutY="42.0" prefHeight="39.0" prefWidth="98.0" />
+                              <TextField layoutX="335.0" layoutY="42.0" prefHeight="39.0" prefWidth="98.0" />
+                              <TextField layoutX="441.0" layoutY="42.0" prefHeight="39.0" prefWidth="98.0" />
+                              <Pane layoutY="81.0" prefHeight="105.0" prefWidth="938.0">
+                                 <children>
+                                    <TextField layoutY="42.0" prefHeight="39.0" prefWidth="101.0" />
+                                    <Label layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Category_id" />
+                                    <Label layoutX="109.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Category_name" />
+                                    <Button layoutX="218.0" layoutY="42.0" mnemonicParsing="false" text="add" />
+                                    <TextField layoutX="109.0" layoutY="42.0" prefHeight="39.0" prefWidth="101.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="11.0" layoutY="364.0" prefHeight="100.0" prefWidth="938.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="23.0" prefHeight="27.0" prefWidth="217.0" text="Invoice" />
+                              <Label layoutX="118.0" layoutY="23.0" prefHeight="27.0" prefWidth="217.0" text="Product" />
+                              <Button layoutX="241.0" layoutY="50.0" mnemonicParsing="false" text="add" />
+                              <TextField layoutY="50.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="110.0" layoutY="50.0" prefHeight="39.0" prefWidth="106.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="11.0" layoutY="464.0" prefHeight="143.0" prefWidth="938.0">
+                           <children>
+                              <Label layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Product_id" />
+                              <Label layoutX="109.0" layoutY="9.0" prefHeight="27.0" prefWidth="217.0" text="Product name" />
+                              <Button layoutX="612.0" layoutY="22.0" mnemonicParsing="false" text="add" />
+                              <Label layoutX="234.0" layoutY="8.0" prefHeight="27.0" prefWidth="217.0" text="Description" />
+                              <Label layoutX="338.0" layoutY="9.0" prefHeight="27.0" prefWidth="217.0" text="Price" />
+                              <Label layoutX="449.0" layoutY="8.0" prefHeight="27.0" prefWidth="217.0" text="Category" />
+                              <TextField layoutY="35.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="111.0" layoutY="36.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="230.0" layoutY="35.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="340.0" layoutY="36.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="449.0" layoutY="35.0" prefHeight="39.0" prefWidth="106.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="11.0" layoutY="264.0" prefHeight="100.0" prefWidth="938.0">
+                           <children>
+                              <Label layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Invoice_id" />
+                              <Label layoutX="115.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Customer" />
+                              <Label layoutX="221.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Dato" />
+                              <Button layoutX="347.0" layoutY="41.0" mnemonicParsing="false" text="add" />
+                              <TextField layoutY="41.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="111.0" layoutY="41.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="223.0" layoutY="41.0" prefHeight="39.0" prefWidth="106.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="14.0" layoutY="167.0" prefHeight="144.0" prefWidth="938.0">
+                           <children>
+                              <TextField layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                              <Label layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Customer_id" />
+                              <Label layoutX="112.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Customer name" />
+                              <Label layoutX="252.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Address" />
+                              <Label layoutX="335.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Phone number" />
+                              <Button layoutX="571.0" layoutY="42.0" mnemonicParsing="false" text="add" />
+                              <Label layoutX="469.0" layoutY="14.0" prefHeight="27.0" prefWidth="217.0" text="Billing account" />
+                              <TextField layoutX="112.0" layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="337.0" layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="224.0" layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                              <TextField layoutX="452.0" layoutY="42.0" prefHeight="39.0" prefWidth="106.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
