@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 
-public class main extends Application {
+public class App extends Application {
 
 
     public static void main(String[] args) {
@@ -20,13 +20,13 @@ public class main extends Application {
             e.printStackTrace();
         }
 
-        ModelTwo model = new ModelTwo();
+        ModelTwo model = new ModelTwo(conn);
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("SceneBuilder.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("View.fxml"));
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root, 700, 600));
         primaryStage.show();
