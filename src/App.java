@@ -1,11 +1,9 @@
 import javafx.application.Application;
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import java.sql.SQLException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.sql.SQLException;
 
 
 public class App extends Application {
@@ -20,7 +18,7 @@ public class App extends Application {
             e.printStackTrace();
         }
 
-        ModelTwo model = new ModelTwo(conn);
+        Model model = new Model(conn);
         launch(args);
     }
 
